@@ -11,4 +11,10 @@
 #
 
 class List < ApplicationRecord
+    belongs_to :board
+    
+    has_many :cards
+    has_many :notes, :through => :cards
+    has_many :taggings, :through => :cards
+    has_many :tags, :through => :taggings
 end

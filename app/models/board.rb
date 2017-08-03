@@ -10,4 +10,9 @@
 #
 
 class Board < ApplicationRecord
+    has_many :lists
+    has_many :cards, :through => :lists
+    has_many :notes, :through => :cards
+    has_many :taggings, :through => :cards
+    has_many :tags, :through => :taggings
 end
