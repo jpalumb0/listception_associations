@@ -27,7 +27,7 @@ class ListsController < ApplicationController
     save_status = @list.save
 
     if save_status == true
-      redirect_to("/lists/#{@list.id}", :notice => "List created successfully.")
+      redirect_to("/boards/"+@list.board_id.to_s, :notice => "List created successfully.")
     else
       render("lists/new.html.erb")
     end
